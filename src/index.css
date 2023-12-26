@@ -1,13 +1,129 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  /* ### Primary */
+  --tomato: hsl(4, 100%, 67%);
+  /* ### Neutral */
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-slate-grey);
+}
+
+body {
+  background-color: var(--charcoal-grey);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+ul {
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.icon-list {
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.container {
+  /* width: 920px; */
+  display: flex;
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: 30px;
+}
+
+.text-content {
+  padding: 70px 60px 0 40px;
+}
+
+.email-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.email-input {
+  font-family: inherit;
+  font-size: 0.9rem;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--grey);
+  margin-bottom: 20px;
+}
+
+.email-input:focus-visible {
+  outline: 1px solid var(--dark-slate-grey);
+}
+
+.subscribe {
+  font-family: inherit;
+  border: unset;
+  font-size: 0.95rem;
+  font-weight: 700;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--dark-slate-grey);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.subscribe:hover {
+  cursor: pointer;
+  background-color: var(--tomato);
+  box-shadow: 0 5px 20px 1px var(--tomato);
+}
+
+.subscribe:active {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
+
+/*========= SUCCESS ============*/
+.success {
+  width: 450px;
+  padding: 25px 40px 40px 40px;
+}
+
+.icon-success {
+  margin-bottom: 30px;
+}
+
+.success p {
+  margin-bottom: 40px;
 }
