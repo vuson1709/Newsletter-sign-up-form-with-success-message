@@ -19,7 +19,7 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [emailValidate, setEmailValidate] = useState(true);
 
-  function handleSubmitEmail(val) {
+  function handleValidate(val) {
     if (
       !val.includes("@") ||
       !val.split("@")[1].length ||
@@ -43,10 +43,7 @@ export default function Newsletter() {
         <Success email={email} onDismissMsg={handleDismissMsg} />
       ) : (
         <>
-          <Form
-            onSubmitEmail={handleSubmitEmail}
-            emailValidate={emailValidate}
-          />
+          <Form onValidate={handleValidate} emailValidate={emailValidate} />
           <Banner />
         </>
       )}
@@ -54,12 +51,12 @@ export default function Newsletter() {
   );
 }
 
-function Form({ onSubmitEmail, emailValidate }) {
+function Form({ onValidate, emailValidate }) {
   const [elEmail, setElEmail] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSubmitEmail(elEmail);
+    onValidate(elEmail);
   }
 
   return (
