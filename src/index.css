@@ -119,6 +119,19 @@ li {
   outline: 1px solid var(--dark-slate-grey);
 }
 
+/* Error state*/
+.invalid-label::after {
+  content: "Valid email required";
+  float: right;
+  color: var(--tomato);
+}
+
+.invalid-input {
+  color: var(--tomato);
+  border: 1px solid var(--tomato);
+  background-color: hsla(4, 100%, 67%, 0.1);
+}
+
 @media only screen and (max-width: 800px) {
   body {
     background-color: var(--white);

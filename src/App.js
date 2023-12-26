@@ -17,8 +17,19 @@ import { useState } from "react";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
+  const [emailValidate, setEmailValidate] = useState(true);
 
   function handleSubmitEmail(val) {
+    if (
+      !val.includes("@") ||
+      !val.split("@")[1].length ||
+      !val.split("@")[0].length
+    ) {
+      setEmailValidate(false);
+      return;
+    }
+
+    setEmailValidate(true);
     setEmail(val);
   }
 
@@ -32,7 +43,10 @@ export default function Newsletter() {
         <Success email={email} onDismissMsg={handleDismissMsg} />
       ) : (
         <>
-          <Form onSubmitEmail={handleSubmitEmail} />
+          <Form
+            onSubmitEmail={handleSubmitEmail}
+            emailValidate={emailValidate}
+          />
           <Banner />
         </>
       )}
@@ -40,7 +54,7 @@ export default function Newsletter() {
   );
 }
 
-function Form({ onSubmitEmail }) {
+function Form({ onSubmitEmail, emailValidate }) {
   const [elEmail, setElEmail] = useState("");
 
   function handleSubmit(e) {
@@ -68,11 +82,15 @@ function Form({ onSubmitEmail }) {
       </ul>
 
       <form onSubmit={handleSubmit}>
-        <label className="email-label">Email address</label>
+        <label
+          className={`email-label ${emailValidate ? "" : "invalid-label"}`}
+        >
+          Email address
+        </label>
         <input
           type="text"
           placeholder="email@company.com"
-          className="email-input"
+          className={`email-input ${emailValidate ? "" : "invalid-input"}`}
           value={elEmail}
           onChange={(e) => setElEmail(e.target.value)}
         />
