@@ -107,6 +107,7 @@ li {
 .email-input {
   font-family: inherit;
   font-size: 0.9rem;
+  color: inherit;
   display: block;
   width: 100%;
   padding: 20px;
