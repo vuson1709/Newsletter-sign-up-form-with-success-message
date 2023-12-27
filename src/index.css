@@ -53,6 +53,9 @@ li {
   margin-bottom: 10px;
 }
 
+picture {
+  margin: 0 auto;
+}
 /*========= BUTTON  ============*/
 .btn {
   font-family: inherit;

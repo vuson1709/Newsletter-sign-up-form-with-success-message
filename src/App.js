@@ -100,10 +100,11 @@ function Form({ onValidate, emailValidate }) {
 }
 
 function Banner() {
-  return window.screen.width > 800 ? (
-    <img src={BannerDesktop} alt="Banner Desktop" className="banner-desktop" />
-  ) : (
-    <img src={BannerMobile} alt="Banner Mobile" className="banner-mobile" />
+  return (
+    <picture>
+      <source media="(max-width:800px )" srcSet={BannerMobile} />
+      <img src={BannerDesktop} alt="Banner Desktop" className="banner" />
+    </picture>
   );
 }
 
