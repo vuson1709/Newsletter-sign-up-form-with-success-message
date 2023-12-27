@@ -53,8 +53,8 @@ li {
   margin-bottom: 10px;
 }
 
-picture {
-  margin: 0 auto;
+.banner-mobile {
+  min-width: 100%;
 }
 /*========= BUTTON  ============*/
 .btn {
@@ -147,6 +147,7 @@ picture {
 
   .container {
     flex-direction: column-reverse;
+
     padding: 0;
     border-radius: 0;
   }

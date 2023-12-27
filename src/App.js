@@ -102,8 +102,8 @@ function Form({ onValidate, emailValidate }) {
 function Banner() {
   return (
     <picture>
-      <source media="(max-width:800px )" srcSet={BannerMobile} />
-      <img src={BannerDesktop} alt="Banner Desktop" className="banner" />
+      <source media="(min-width:800px )" srcSet={BannerDesktop} />
+      <img src={BannerMobile} alt="Banner Mobile" className="banner-mobile" />
     </picture>
   );
 }
